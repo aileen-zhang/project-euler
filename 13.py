@@ -8,3 +8,5 @@ for line in input:
     sum += num
 
 print(sum)
+
+input.close()

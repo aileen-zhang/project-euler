@@ -25,3 +25,5 @@ while i < len(input) - n:
 
 products.sort()
 print(products[-1])
+
+file.close()
