@@ -1,6 +1,9 @@
 # maximum path sum (problems 18 and 67)
 
-file = open("67.txt", "r")
+import time
+start_time = time.time()
+
+file = open("18.txt", "r")
 arr = []
 
 for line in file:
@@ -20,6 +23,7 @@ while len(arr) > 1:
         arr[-2] = this
     arr.pop()
 
-print(arr)
+print(arr[0][0]) # 1074 / 7273
+print("%.3f ms" % ((time.time() - start_time) * 1000)) # 3.576 ms / 6.692 ms
 
 file.close()

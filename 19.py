@@ -1,5 +1,8 @@
 # counting Sundays
 
+import time
+start_time = time.time()
+
 leap = 0
 month_lengths = [31, 28 + leap, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 day = 1
@@ -19,4 +22,5 @@ for month in range(0, 12 * (years + 1) + 1):
 
 sunday_count = sunday[12:].count(True)
 
-print(sunday_count)
+print(sunday_count) # 171
+print("%.3f ms" % ((time.time() - start_time) * 1000)) # 2.079 ms

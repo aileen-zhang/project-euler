@@ -1,22 +1,22 @@
 # find Pythagorean triplet that sums to 1000
 
 import numpy as np
-a = 0
+import time
+start_time = time.time()
+
 product = 0
 
-while a < 250:
-    b = 250
-    while b < 500:
+for a in range (0, 250):
+    for b in range (250, 500):
         c = np.sqrt(a ** 2 + b ** 2)
         if c % 1 == 0:
             if a + b + c == 1000:
-                triple = (a, b, c)
-                product = a * b * c
+                triple = (int(a), int(b), int(c))
+                product = int(a * b * c)
                 break
-        b += 1
     if product != 0:
         break
-    a += 1
 
-print(triple)
-print(product)
+print(triple) # (200, 375, 425)
+print(product) # 31875000
+print("%.3f ms" % ((time.time() - start_time) * 1000)) # 96.149 ms

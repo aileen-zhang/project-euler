@@ -1,8 +1,13 @@
 # naive fraction cancelling
 
+import time
+start_time = time.time()
+
 max = 100
 numerators = []
 denominators = []
+n_prod = 1
+d_prod = 1
 
 for n in range(10, max):
     for m in range(10, n):
@@ -26,9 +31,6 @@ for n in range(10, max):
                     numerators.append(m)
                     denominators.append(n)
 
-n_prod = 1
-d_prod = 1
-
 for n in numerators:
     n_prod *= n
 
@@ -39,4 +41,5 @@ for i in range(1, n_prod + 1):
     if n_prod % i == 0 and d_prod % i == 0:
         gcd = i
 
-print(d_prod / i)
+print(int(d_prod / i)) # 100
+print("%.3f ms" % ((time.time() - start_time) * 1000)) # 42.637 ms

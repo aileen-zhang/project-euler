@@ -1,6 +1,8 @@
 # largest product in a square grid
 
 import numpy as np
+import time
+start_time = time.time()
 
 input = open("11.txt", "r")
 arr_in = []
@@ -44,6 +46,8 @@ offset2 = np.transpose(offset2)
 consecutive_row_sum(offset2)
 
 products.sort()
-print(products[-1])
+
+print(int(products[-1])) # 70600674
+print("%.3f ms" % ((time.time() - start_time) * 1000)) # 7.253 ms
 
 input.close()

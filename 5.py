@@ -1,5 +1,8 @@
 # smallest common multiple
 
+import time
+start_time = time.time()
+
 max = 20
 i = 1
 numbers = []
@@ -18,5 +21,5 @@ for n, num in enumerate(numbers):
 for num in numbers:
     scm *= num
 
-print(numbers)
-print(scm)
+print(int(scm)) # 232792560
+print("%.3f ms" % ((time.time() - start_time) * 1000)) # 0.138 ms

@@ -1,17 +1,18 @@
 # largest palindrome from product of two three-digit numbers
 
-max = 999
-i1 = 1
+import time
+start_time = time.time()
+
+max = 1000
 palindromes = []
 
-while i1 < max:
-    i2 = 1
-    while i2 < max:
+for i1 in range(1, max):
+    for i2 in range(i1, max):
         num = i1 * i2
         if str(num) == str(num)[::-1]:
             palindromes.append(num)
-        i2 += 1
-    i1 += 1
 
 palindromes.sort()
-print(palindromes[-1])
+
+print(palindromes[-1]) # 906609
+print("%.3f ms" % ((time.time() - start_time) * 1000)) # 291.458 ms

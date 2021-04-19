@@ -1,6 +1,8 @@
 # circular primes below 1000000
 
 import itertools
+import time
+start_time = time.time()
 
 n = 1000000
 digits = [1, 3, 7, 9]
@@ -18,7 +20,6 @@ for r in range(3, 7):
         candidates.append(num)
 
 # list of primes less than 1000000
-
 primes = [True] * n
 primes[0] = primes[1] = False
 
@@ -41,4 +42,6 @@ while i < 10: # why does it take 10 loops through to get them all?
             prime_candidates.pop(p)
     i += 1
 
-print(len(prime_candidates) + 13) # include the 13 less than 100
+# include the 13 less than 100
+print(len(prime_candidates) + 13) # 55
+print("%.3f ms" % ((time.time() - start_time) * 1000)) # 294.167 ms
